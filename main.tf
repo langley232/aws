@@ -1,5 +1,7 @@
 provider "aws" {
   region = var.region
+  access_key="AKIAUW76MN7FF6ZJLSOW"
+  secret_key="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"
 }
 
 data "aws_availability_zones" "available" {}
@@ -60,7 +62,7 @@ module "eks" {
     one = {
       name = "node-group-1"
 
-      instance_types = ["t3.small"]
+      instance_types = ["c3.2xlarge"]
 
       min_size     = 1
       max_size     = 3
@@ -70,7 +72,7 @@ module "eks" {
     two = {
       name = "node-group-2"
 
-      instance_types = ["t3.small"]
+      instance_types = ["c3.2xlarge"]
 
       min_size     = 1
       max_size     = 2
